@@ -1,0 +1,42 @@
+﻿@model PracticalTask1.ProductModel
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+<div class="mt-2" style="width:50%">
+    <form asp-action="CreateProduct">
+    <h2>Add Person</h2>
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Name</label>
+        <input asp-for="Name" type="text" class="form-control">
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+
+    <div class="mb-3">
+            <label asp-for="Description" class="form-label">Description</label>
+            <input asp-for="Description" type="text" class="form-control">
+            <span class="text-danger" asp-validation-for="Description"></span>
+    </div>
+        <div class="mb-3">
+            <label asp-for="Price" class="form-label">Price</label>
+            <input asp-for="Price" type="text" class="form-control">
+            <span class="text-danger" asp-validation-for="Price"></span>    
+        </div>
+        <div class="mb-3">
+            <label for="Category" class="col-form-label col-lg-6">Category Name</label>
+            <select id="Category" class="form-control select2" asp-for="categoryId" asp-items="@Model.CategoryList">
+                <option value="" hidden disabled selected>Please select</option>
+            </select>
+            <span id="Category" class="text-danger" asp-validation-for="categoryId"></span>
+        </div>
+  
+        @if (TempData["msg"] != null)
+        {
+            <div class="mb-3">
+               @TempData["msg"]
+            </div>
+        }   
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a href="/Product/ViewProduct" class="btn btn-primary">All Product</a>
+</form>
+</div>

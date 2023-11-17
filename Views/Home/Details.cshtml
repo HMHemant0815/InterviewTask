@@ -1,0 +1,58 @@
+﻿@{
+    ViewData["Title"] = "User Details Page";
+}
+@model PracticalTask1.DashboardDetail
+<h1>@ViewData["Title"]</h1>
+
+<table class="table">
+    <tbody>
+    
+        <tr>
+            <th>Name</th>
+            <td>@Model.Name</td>
+       
+            <th>Username</th>
+            <td>@Model.Username</td>
+       
+            <th>Email</th>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <th>Street</th>
+            <td>@Model.Address.Street</td>
+       
+            <th>Suite</th>
+            <td>@Model.Address.Suite</td>
+        
+            <th>City</th>
+            <td>@Model.Address.City</td>
+        </tr>
+        <tr>
+            <th>Zipcode</th>
+            <td>@Model.Address.Zipcode</td>
+      
+            <th>Lat</th>
+            <td>@Model.Address.Geo.Lat</td>
+       
+            <th>Lng</th>
+            <td>@Model.Address.Geo.Lng</td>
+        </tr>
+        <tr>
+            <th>Phone</th>
+            <td>@Model.Phone</td>
+       
+            <th>Website</th>
+            <td>@Model.Website</td>
+      
+            <th>Company Name</th>
+            <td>@Model.Company.Name</td>
+        </tr>
+        <tr>
+            <th>Catch Phrase</th>
+            <td>@Model.Company.CatchPhrase</td>
+       
+            <th>Bs</th>
+            <td>@Model.Company.Bs</td>
+        </tr>
+    </tbody>
+</table>
